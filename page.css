@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+/* Srtucture */
+body { margin: 0px; font: 12px Arial, Helvetica, sans-serif; background: #dfd url(a/bg.gif) repeat-x; }
+#rootdiv { margin: 10px auto 0px; width: 880px; } 
+
+#header { border-bottom: solid 2px #666666; 4px; margin-bottom: 2px; font-size: 1.2em} 
+h2 { text-align: center; }
+#contents { position: relative;} 		   
+#bottomline { clear: both; border-top:2px solid #333; padding-top: 4px; margin-top: 2px; text-align: center;}
+
+.left-side {float: left; width: 280px; }
+.rightpart { margin-left: 284px}
+
+/* character name & level */
+#characterHeader { height: 24px; background-color:#bbe; text-align: center; line-height: 22px; /* position: relative; */}  
+#characterHeader span { font-size: 14px; margin: 3px}  
+#editCharacterName { position: absolute; width: 165px; left: 36px; top: 1px; border: solid 1px #99F; font-size: 14px; height: 18px; text-align: center; }
+#userinfo { line-height: 20px; } 
+
+.level { position: absolute; left: 4px; width: 56px; height: 24px; padding-left: 32px; line-height:22px; text-align: left; font-size: 18px}
+#characterTitle { top: 4px; background: #DDF url(i/tl.gif) 4px center no-repeat; }
+#characterDegree { top: 32px; background: #DDF url(i/dl.gif) 4px center no-repeat;} 
+
+#panelChangeLevel { position:relative; top:24px; z-index: 10;} 
+#panelChangeLevel .backlayer { height: 88px; width: 175px; position: absolute; left: 32px; background-color:#DDF; top: 2px; }
+#panelChangeLevel input { position: absolute; width: 26px; left: 36px; border: solid 1px #99F; font-size: 14px; height: 18px; text-align: center; }
+#panelChangeLevel button { position: absolute; height: 24px; text-align: center; top: 60px; left: 70px; width: 100px;}
+#editCharacterTitle { top: 5px; }
+#editCharacterDegree { top: 33px; }
+
+#panelChangeLevel select { position: absolute; width: 133px; border: solid 1px #99F; font-size: 14px; height: 22px; }
+#selectGreatTitle  { top: 5px; left: 70px; }
+#selectGreatDegree  { top: 33px; left: 70px; }
+
+/* state is set by class - affects visibility - and that is enough by now*/
+.state_dressup input.base { display: none; }
+.state_dressup #characterHeader input { display: none; }
+.state_editstats #characterHeader span{ display: none; }
+.state_dressup #panelChangeLevel { display: none; }
+.state_dressup .state_editstats input.base { display: block; }
+
+/* slots and all they need */
+.highlite, .inslot-icon { width: 34px; height: 34px; background-position: center ; background-repeat:no-repeat; }
+.slot-accepts .highlite { background: transparent url(a/accept.png); }
+.slot { width: 34px; height: 34px; background-color: #678; margin: 0px; position: absolute; }
+.slot-filled { background: transparent url( a/slotused.gif ); }
+.cannot-use { background-color: #990000; } 
+#itemList .cannot-use { background-color: #f99; } 
+#itemList .hint { background-color: #DFD; margin: 0 210px 0 10px; padding: 20px 30px 60px; text-align: center; font-size: 15px} 
+#itemList .hint-feedback { margin-top: 65px; padding: 20px; } 
+
+#gt-total { position: absolute; top: -3px; right: 8px; width: 52px; height: 22px; text-align: center; font-size: 16px;line-height:22px; border-top: solid #645; background:#9496b6 url(g/price.png) 2px 2px no-repeat; padding-left: 20px; }
+
+/* Item List */ 
+#itemList { height: 540px; background-color: #EFE; background-image:url(a/itemlist.gif) }
+#theList { position: relative;}
+#prefixSelector { border-left: solid 1px #339933; width: 200px; float: right; height: 538px; background-color: #EFE; text-align: center;} 
+.prefix-sw { display: block; margin: 3px; } 
+span.prefix-sw { background-color: #CFC; } 
+.expressNews { padding: 40px 4px 0px; text-align: left;}
+
+
+/* menu related things */
+#itemMenu { height: 24px; background-color: #CFC; font-size: 1.2em; line-height: 22px}
+/***************************** keep it? **********************/
+#charMenu { height: 24px; font-size: 1.2em; line-height: 22px; text-align: left; float: right; }
+
+.itemline { border: solid 1px #006600; position: absolute; background-color: #FFE}
+.itemline .icon { width: 32px; height: 32px; float:left; }
+
+.doll { background-color:#ccf; height: 254px; position:relative; }
+
+/* torba */
+#torba { background-color:#DCF; height: 69px; margin-top: 3px; position: relative; }
+.torba-caption { background-color: #CBE; height:24px;line-height:22px; text-align: center; font-size: 14px; padding-right: 80px; }
+
+/* stat indicators */
+.titles, .degrees { width: 134px; height: 207px; margin-top: 3px; padding: 2px; background-color:#fcc}
+.titles { float: left; }
+.degrees { float: right; } 
+.s-value { background-color:#fee; padding: 2px 2px 2px 25px; height: 20px; background-repeat:no-repeat; background-position: 2px center; font-size: 1.3em; position: relative;}
+.ma, .md, .fa, .fd, .s-value { text-align: center; }
+/* some groups need to be separated */
+.hp, .mp { margin-bottom: 5px; } 
+.f1, .m1, .f0, .m0 { margin-top: 5px; } 
+.invalid { color: red; font-weight: bold; } 
+/* stat indicators - the very icons*/
+.hp { background-image: url(i/th.gif); }
+.mp { background-image: url(i/dh.gif); }
+.md { background-image: url(i/da.gif); }
+.ma { background-image: url(i/dd.gif); }
+.fd { background-image: url(i/ta.gif); }
+.fa { background-image: url(i/td.gif); }
+.f0 { background-image: url(i/tl.gif); }
+.f1 { background-image: url(i/t1.gif); }
+.f2 { background-image: url(i/t2.gif); }
+.f3 { background-image: url(i/t3.gif); }
+.f4 { background-image: url(i/t4.gif); }
+.m0 { background-image: url(i/dl.gif); }
+.m1 { background-image: url(i/d1.gif); }
+.m2 { background-image: url(i/d2.gif); }
+.m3 { background-image: url(i/d3.gif); }
+.m4 { background-image: url(i/d4.gif); }
+
+/* spec stat options */
+.s-value .total { left: 26px; width: 30px; position: absolute; white-space:nowrap; }
+.s-value a { width: 18px; height: 18px; position: absolute; } 
+.s-value .down { left: 58px; background: transparent url(a/ctrls.gif) -18px center no-repeat;}
+.s-value .up { left: 77px; background: transparent url(a/ctrls.gif) -0px center no-repeat;}
+.s-value .req { left: 95px; width: 35px; position: absolute;}
+.s-value .base { left: 24px; width: 30px; position: absolute; text-align: center; font-size: 15px; background-color:#FFF; border:1px solid #867;}
+.s-value .hover-up { background-position: -36px center; }
+.s-value .hover-down { background-position: -54px center; }
+.s-value .clicked-up { background-position: -72px center; }
+.s-value .clicked-down { background-position: -90px center; }
+
+
+/* tooltip-related */
+#tooltip { border: solid 1px gray; clear: both; position:absolute; z-index:3000; }
+#tooltip .body { position: relative; width: 200px; background-color:#FFE}
+#tooltip .item-name { text-align:center; font-size: 14px; padding: 2px 25px; background-color:#FFC; margin-bottom: 3px; }
+#tooltip .item-rank { position: absolute; font-weight: bold; right: 2px; top: 2px; width: 20px; text-align: center; background-color:#DD6 }
+#tooltip .item-id { position: absolute; left: 2px; top: 2px; width: 20px; text-align: center; font-size: 9px; } 
+#tooltip .item-reqs { width: 100px; float: left; }
+#tooltip .item-bonus { width: 100px; float: right; }
+#tooltip span  { display: block; text-align: center; font-size: 13px; } 
+#tooltip .item-misc { clear: both; }
+#tooltip .descr { font-size: 11px; background-color:#EE9; }
+#tooltip .cost { background-color:#FFC; padding: 1px; } 
+#tooltip .req { background-repeat:no-repeat; background-position: 5px center; height: 19px; line-height: 18px; text-align: left; padding-left: 30px;  } 
+#tooltip .fail { color:#C00; font-weight: bold } 
+
+/* Menu Essentials */
+ul.jdmenu { margin: 0px; padding: 0px 10px; list-style-type: none }
+ul.jdmenu li { float: left; }
+ul.jdmenu ul { position: absolute; display: none; list-style-type: none; margin: 0px; padding: 0px; z-index: 10000; }
+ul.jdmenu ul li { float: none; margin: 0px; white-space:nowrap; }
+
+/* Menu Decorations */
+ul.jdmenu li { padding-left: 15px; padding-right: 16px; }
+ul.jdmenu li.has_submenu_0 { padding-left: 5px; background: transparent url(i/menu_arrowd.gif) no-repeat scroll right center; }
+ul.jdmenu li.has_submenu_1 { background: transparent url(i/menu_arrow.gif) no-repeat scroll right center; }
+ul.jdmenu .icon { background-position: -2px center; background-repeat:no-repeat; padding-left: 30px;}
+ul.jdmenu .check { background-position: 2px center; background-repeat:no-repeat; padding-left: 18px;}
+ul.jdmenu .separator { padding-left: 5px; font-weight: bold }
+ul.jdmenu .separator-icon  { padding-left: 30px; } 
+
+#itemMenu ul.jdmenu ul { background-color: #CFC; border: solid 1px #6C6; }
+#itemMenu ul.jdmenu li.jdm_hover { background-color: #DFD; }
+#itemMenu ul.jdmenu .separator { background-color: #BFB; }
+
+#charMenu ul.jdmenu ul { background-color: #CCF; border: solid 1px #66C; }
+#charMenu ul.jdmenu li.jdm_hover { background-color: #DDF; }
+#charMenu ul.jdmenu .separator { background-color: #BBF; }
+
+.selectedChar { background-image: url(a/menu_check.gif) } 
+
+/* -- Drag-n-Drop -- */
+.ui-draggable-dragging { z-index: 120 }
+
+/* Doll Slot placement grid*/ 
+
+/* items */
+.doll .c1 { left:64px; }
+.doll .c2 { left:105px; }
+.doll .c3 { left:145px; }
+
+.doll .r1 { top: 2px; }
+.doll .r2 { top: 44px; }
+.doll .r3 { top: 86px; }
+.doll .r4 { top: 128px; }
+.doll .r5 { top: 170px; }
+.doll .r6 { top: 212px; }
+
+.doll .r2a { top: 10px; }
+.doll .r3a { top: 66px; }
+.doll .r4a { top: 118px; }
+.doll .r5a { top: 160px; }
+.doll .r6a { top: 202px; }
+
+/* crystals */
+.doll .rb { left: 9px; }
+
+/* muts */ 
+.doll .mu1 { top: 60px; } 
+.doll .mu2 { top: 60px; } 
+.doll .mu3 { top: 98px; } 
+.doll .mu4 { top: 98px; } 
+.doll .mu5 { top: 136px; } 
+.doll .mu6 { top: 136px; } 
+.doll .mu7 { top: 174px; } 
+.doll .mu8 { top: 174px; } 
+.doll .mu9 { top: 212px; } 
+.doll .mu10 { top: 212px; } 
+
+.doll .e1 { left: 200px; }
+.doll .e2 { left: 238px; }
+
+/* spec & weapon */
+.doll .e1a { left: 172px; }
+.doll .e2a { left: 238px; }
+
+
+#torba .slot { background-color: #867; top: 30px; position: absolute; }
+#torba .cannot-use { background-color: #C67 }
+
+#s30 {left: 6px; }
+#s31 {left: 45px; }
+#s32 {left: 84px; }
+#s33 {left: 123px; }
+#s34 {left: 162px; }
+#s35 {left: 201px; }
+#s36 {left: 240px; }
+
+/* Menu icons */ 
