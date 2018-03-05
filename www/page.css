@@ -6,10 +6,10 @@ body { margin: 0px; font: 12px Arial, Helvetica, sans-serif; background: #dfd ur
 
 #header { border-bottom: solid 2px #666666; 4px; margin-bottom: 2px; font-size: 1.2em} 
 h2 { text-align: center; }
-#contents { position: relative;} 		   
+#contents { position: relative; clear: both;} 		   
 #bottomline { clear: both; border-top:2px solid #333; padding-top: 4px; margin-top: 2px; text-align: center;}
 
-.left-side {float: left; width: 280px; }
+.left-side {float: left; min-width: 280px; }
 .rightpart { margin-left: 284px}
 
 /* character name & level */

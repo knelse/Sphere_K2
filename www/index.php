@@ -18,8 +18,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="stylesheet" type="text/css" href="page.css">
-<!--[if IE]><link rel="stylesheet" type="text/css" href="page_ie.css" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="page.css?180306">
+<!--[if IE]><link rel="stylesheet" type="text/css" href="page_ie.css?180306" /><![endif]-->
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sphere-K2 - Кукла 2 для игры "Сфера"</title>
@@ -181,7 +181,7 @@
 		echo "var chars = ".Character::globalJSon().";";			
 	}
 	else
-		echo 'var setup = { apiurl: "backend.php", auth: [0,'guest',3], chars: {} };';
+		echo 'var setup = { apiurl: "backend.php", auth: [0,"guest",3], chars: {} };';
 ?>	
 	var Template = {
 		slot: '<div class="inslot-icon"><div class="highlite"></div></div>',
