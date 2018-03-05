@@ -1,5 +1,5 @@
 <?php
-	$is_local = "localhost" == $_SERVER['HTTP_HOST'];
+	$is_local = true; /*"localhost" == $_SERVER['HTTP_HOST'];
 	
 	define( 'DOLL_VERSION', 20000 );
 	require_once('config.php');
@@ -11,7 +11,8 @@
 	require_once('view/json.php');
 	
 	// 1. Auth - see who is coming
-	User::init($member);	
+	User::init($member);
+*/	
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -21,7 +22,7 @@
 <!--[if IE]><link rel="stylesheet" type="text/css" href="page_ie.css" /><![endif]-->
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>mmo2.ru :: Сфера : Кукла 2</title>
+<title>Sphere-K2 - Кукла 2 для игры "Сфера"</title>
 </head>
 <?php 	
 	if ( $is_local ) 
@@ -37,8 +38,8 @@
 	<div id="rootdiv" class="state_dressup">
     <div id="header">
     	<div id="userinfo" class="left-side">
-      	Привет, Гость! <a href="http://www.mmo2.ru/forums/">Войти?</a><br />
-        Регистрация дает сохранять персонажей
+      	Привет, Гость! <br />
+        Регистрация пока не работает, сохранить персонажей нельзя :(
       </div>
 	    <h2>Кукла 2, онлайн &alpha;-версия</h2>
     </div>
@@ -154,24 +155,25 @@
         	<div id="itemMenu">/* Меню создается скриптом*/</div>
           <div id="itemList">
           	<div id="prefixSelector"><br />В этой части экрана будут появляться префиксы<br />на выбор<div class="expressNews">Последние обновления:<br /><br />
-<b>13.10.2008</b> - При открытии страницы загружаются все персонажи, а при сохранении персонажи сохраняются<br /><br />
-<b>12.10.2008</b> - Наборы вещей, отображение требований вещи красным, если персонаж не может использовать<br /><br />
+<b>06.03.2018</b> - Проект возвращён к жизни<br /><br />
 <b>11.10.2008</b> - Дабл-клик в пустом слоте выводит список вещей для этого слота.<br />При переходе между категориями с одинаковым префиксом, выбор префикса сохраняется<br /><br />
-<b>10.10.2008</b> - Авторизация выполняется при входе автоматически<br /><br />
 <b>25.08.2008</b> - Разделение ЭШ и обычного для специальностей (пока сделано только для мультов)<br /><br />
 <b>22.08.2008</b> - Можно работать с несколькими куклами, переключаясь через меню персонажа<br /><br />
 	</div>
 </div>
-	          <div id="theList"><div class="hint">После того, как выберите из меню какую-нибудь категорию, здесь появятся предметы.<br /><br /><br />Чтобы одеть предмет, перетащите его на куклу персонажа или дабл-клик по нему.<br /><br /><br />Чтобы изменить характеристики, такие как земля, огонь, сила, выносливость, можно дважды кликнуть по числу характеристики<br /><br /><br />Чтобы изменить имя или уровень персонажа, дважды щелкните по имени или уровню</div><div class="hint hint-feedback">Отзывы, предложения и замечания принимаются <a href=http://www.mmo2.ru/forums/index.php>на форуме</a><br /><br />А кто не боится слова "багтрекер", может заходить в <a href="http://dev.mmo2.ru/">Mantis</a></div></div>
+            <div id="theList">
+              <div class="hint">После того, как выберите из меню какую-нибудь категорию, здесь появятся предметы.<br /><br /><br />Чтобы одеть предмет, перетащите его на куклу персонажа или дабл-клик по нему.<br /><br /><br />Чтобы изменить характеристики, такие как земля, огонь, сила, выносливость, можно дважды кликнуть по числу характеристики<br /><br /><br />Чтобы изменить имя или уровень персонажа, дважды щелкните по имени или уровню</div>
+              <div class="hint hint-feedback">Отзывы, предложения и замечания принимаются <a href="https://github.com/makhotkin/Sphere_K2">на github</a></div>
+            </div>
           </div>
         </div>
       </div>
-      <div id="bottomline">&copy; 2008 <a href="http://www.dtf.ru/person/info.php?id=3807">Соул</a>. Проект <a href="http://www.mmo2.ru/">&quot;Воздух онлайн-миров&quot;</a><br />Изображения предметов и характеристик © <a href="http://www.nikitaonline.ru">Фабрика развлечений</a>, 2007-2008. Все права защищены </div>    </div>
+      <div id="bottomline">Проект "Кукла" &copy; 2004-2008, 2018 <a href="https://vk.com/max_makhotkin">Максим Махоткин</a>. <br />Изображения предметов и характеристик © <a href="http://www.nikitaonline.ru">Фабрика развлечений</a>, 2007-2008. Все права защищены <br/> Сайт не собирает и не обрабатывает никакие личные данные.</div>  </div>
 
 <script>
 	var api_url = "backend.php";
 <?php 	
-	if ( getUser()->isMember() ) 
+	if ( false && getUser()->isMember() ) 
 	{
 		echo "var auth = ".getUser()->getJsonAuth().";\n";
 		DB::connect();		
@@ -179,7 +181,7 @@
 		echo "var chars = ".Character::globalJSon().";";			
 	}
 	else
-		echo 'var auth = [0,"guest"];\var chars={};';
+		echo 'var setup = { apiurl: "backend.php", auth: [0,'guest',3], chars: {} };';
 ?>	
 	var Template = {
 		slot: '<div class="inslot-icon"><div class="highlite"></div></div>',
