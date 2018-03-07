@@ -53,7 +53,7 @@ h2 { text-align: center; }
 #gt-total { position: absolute; top: -3px; right: 8px; width: 52px; height: 22px; text-align: center; font-size: 16px;line-height:22px; border-top: solid #645; background:#9496b6 url(g/price.png) 2px 2px no-repeat; padding-left: 20px; }
 
 /* Item List */ 
-#itemList { height: 540px; background-color: #EFE; background-image:url(a/itemlist.gif) }
+#itemList { height: 540px; background-color: #EFE; background-image:url(a/itemlist.gif); overflow: auto; }
 #theList { position: relative;}
 #prefixSelector { border-left: solid 1px #339933; width: 200px; float: right; height: 538px; background-color: #EFE; text-align: center;} 
 .prefix-sw { display: block; margin: 3px; } 

@@ -1,4 +1,4 @@
-// DND
+// Drag and Drop
 ;function CDnD() 
 {
 	var Character = null;
